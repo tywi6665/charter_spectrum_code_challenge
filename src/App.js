@@ -26,6 +26,7 @@ function App() {
   return (
     <Container>
       <Pagination
+        data={restaurants}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
