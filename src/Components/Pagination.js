@@ -4,6 +4,7 @@ import Table from "./Table/Table";
 const Pagination = ({ data, currentPage, setCurrentPage }) => {
 
     const [pageNumbers, setPageNumbers] = useState([])
+    const [currentDataIndex, setCurrentDataIndex] = useState(null)
 
     useEffect(() => {
         const arr = [];
