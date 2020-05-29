@@ -12,13 +12,27 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
         setPageNumbers(arr)
     }, [data]);
 
+    const handleClick = (e) => {
+        setCurrentPage({
+            ...currentPage,
+            currentPage: Number(e.target.id)
+        });
+    }
+
     return (
         <div>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
+                {pageNumbers.map(number => {
+                    return (
+                        <li
+                            key={number}
+                            id={number}
+                            onClick={handleClick}
+                        >
+                            {number}
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     );
