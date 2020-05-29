@@ -9,11 +9,26 @@ const Filter = ({
     setFilterByState
 }) => {
 
+    const handleFilterByGenreChange = e => {
+        if (e.target.value === "-All-") {
+            setFilterByGenre("")
+        } else {
+            setFilterByGenre(e.target.value);
+        }
+    };
+    const handleFilterByStateChange = e => {
+        if (e.target.value === "-All-") {
+            setFilterByState("")
+        } else {
+            setFilterByState(e.target.value);
+        }
+    };
+
     return (
         <div>
             <div>
-                <label>Filter by Genre: </label>
-                <select>
+                <label>Filter by Genre : </label>
+                <select defaultValue={filterByGenre} onChange={handleFilterByGenreChange}>
                     <option value="-All-">-All-</option>
                     {genres.length > 0 ? (
                         genres.map((genre, i) => {
@@ -21,8 +36,8 @@ const Filter = ({
                         })
                     ) : (<option value="-Loading-">-Loading Genres-</option>)}
                 </select>
-                <label>Filter by State: </label>
-                <select>
+                <label>Filter by State : </label>
+                <select defaultValue={filterByState} onChange={handleFilterByStateChange}>
                     <option value="-All-">-All-</option>
                     {states.map((state, i) => {
                         return <option key={i} value={state}>{state}</option>
@@ -31,6 +46,6 @@ const Filter = ({
             </div>
         </div>
     );
-}
+};
 
 export default Filter;
