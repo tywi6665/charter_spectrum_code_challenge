@@ -70,11 +70,15 @@ function App() {
         filterByState={filterByState}
         setFilterByState={setFilterByState}
       />
-      <Pagination
-        data={filteredRestaurants}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      {filteredRestaurants.length > 0 ? (
+        <Pagination
+          data={filteredRestaurants}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      ) : (
+          <p>Sorry, No Results :(</p>
+        )}
     </Container>
   );
 }
