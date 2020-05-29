@@ -13,6 +13,12 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
         setPageNumbers(arr)
     }, [data]);
 
+    useEffect(() => {
+        const lastDataIndex = currentPage.currentPage * currentPage.resultsPerPage;
+        const firstDataIndex = lastDataIndex - currentPage.resultsPerPage;
+        setCurrentDataIndex(data.slice(firstDataIndex, lastDataIndex));
+    }, [data, currentPage]);
+
     const handleClick = (e) => {
         setCurrentPage({
             ...currentPage,
