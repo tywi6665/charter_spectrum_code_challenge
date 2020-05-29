@@ -15,6 +15,8 @@ function App() {
     currentPage: 1,
     resultsPerPage: 10
   });
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     API.fetchRestaurants().then(res => {
@@ -23,12 +25,24 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const searchAllRegex = searchValue && new RegExp(`${searchValue}`, "gi");
+    const result = restaurants.filter(
+      restaurant =>
+        (!searchAllRegex || searchAllRegex.test(restaurant.name) + searchAllRegex.test(restaurant.city) + searchAllRegex.test(restaurant.genre))
+    );
+    setFilteredRestaurants(result);
+  }, [searchValue, restaurants]);
+
 
   return (
     <Container>
-      <Search />
+      <Search
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       <Pagination
-        data={restaurants}
+        data={filteredRestaurants}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
