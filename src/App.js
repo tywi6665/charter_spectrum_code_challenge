@@ -50,6 +50,7 @@ function App() {
         }
       }
     }
+    genreList.sort((a, b) => (a > b) ? 1 : -1);
     setGenres(genreList)
   }
 
