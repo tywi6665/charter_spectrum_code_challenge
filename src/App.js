@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "./Components/Container";
+import Table from "./Components/Table/Table";
 import API from "./utils/API";
 import "./App.scss";
 
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <Container>
-
+      <Table />
     </Container>
   );
 }
