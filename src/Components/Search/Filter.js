@@ -2,7 +2,11 @@ import React from "react";
 
 const Filter = ({
     genres,
-    states
+    filterByGenre,
+    setFilterByGenre,
+    states,
+    filterByState,
+    setFilterByState
 }) => {
 
     return (

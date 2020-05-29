@@ -5,7 +5,11 @@ const Search = ({
     setSearchValue,
     searchValue,
     genres,
-    states
+    filterGenre,
+    setFilterByGenre,
+    states,
+    filterByState,
+    setFilterByState
 }) => {
 
     const handleSearchInputChanges = e => {
@@ -18,6 +22,8 @@ const Search = ({
 
     const clearFilter = e => {
         setSearchValue("");
+        setFilterByGenre("");
+        setFilterByState("");
     };
 
     return (
@@ -30,7 +36,11 @@ const Search = ({
             />
             <Filter
                 genres={genres}
+                filterGenre={filterGenre}
+                setFilterByGenre={setFilterByGenre}
                 states={states}
+                filterByState={filterByState}
+                setFilterByState={setFilterByState}
             />
             <button onClick={clearFilter}>clear</button>
         </form>
