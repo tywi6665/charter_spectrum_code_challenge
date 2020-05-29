@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Pagination = () => {
+const Pagination = ({ currentPage, setCurrentPage }) => {
     return (
         <div>
             <ul>
