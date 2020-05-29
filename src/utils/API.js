@@ -6,7 +6,6 @@ export default {
                 Authorization: "Api-Key q3MNxtfep8Gt",
             }
         });
-        const data = await res.json();
-        return data
+        return await res.json();
     }
 };
