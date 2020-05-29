@@ -30,9 +30,6 @@ function App() {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-      <Table
-        data={restaurants}
-      />
     </Container>
   );
 }

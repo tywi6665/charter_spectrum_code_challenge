@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import Table from "./Table/Table";
 
 const Pagination = ({ data, currentPage, setCurrentPage }) => {
 
@@ -21,6 +22,9 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
 
     return (
         <div>
+            <Table
+                data={data}
+            />
             <ul>
                 {pageNumbers.map(number => {
                     return (
