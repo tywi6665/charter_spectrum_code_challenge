@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     API.fetchRestaurants().then(res => {
+      res.sort((a, b) => (a.name > b.name) ? 1 : -1);
       setRestaurants(res);
       setIsLoaded(true);
     });
