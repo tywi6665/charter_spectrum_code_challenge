@@ -20,7 +20,9 @@ function App() {
 
   return (
     <Container>
-      <Table />
+      <Table
+        data={restaurants}
+      />
     </Container>
   );
 }

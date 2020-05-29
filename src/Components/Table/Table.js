@@ -1,4 +1,5 @@
 import React from 'react';
+import Datacell from "./Datacell";
 
 const Table = ({ data }) => {
 
@@ -14,9 +15,20 @@ const Table = ({ data }) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Loading Restaurants</td>
-                </tr>
+                {data ? (
+                    data.map((restaurant, i) => {
+                        return (
+                            <Datacell
+                                key={i}
+                                data={restaurant}
+                            />
+                        )
+                    })
+                ) : (
+                        <tr>
+                            <td>Loading Restaurants</td>
+                        </tr>
+                    )}
             </tbody>
         </table>
     );
