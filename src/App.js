@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Container from "./Components/Container";
 import Table from "./Components/Table/Table";
 import Pagination from "./Components/Pagination";
+import Search from "./Components/Search/Search";
 import API from "./utils/API";
 import "./App.scss";
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <Container>
+      <Search />
       <Pagination
         data={restaurants}
         currentPage={currentPage}
