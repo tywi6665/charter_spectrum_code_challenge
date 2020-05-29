@@ -18,7 +18,8 @@ function App() {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [genres, setGenres] = useState("");
-
+  const [filterByGenre, setFilterByGenre] = useState("");
+  const [filterByState, setFilterByState] = useState("");
   const states = ["AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"];
 
   useEffect(() => {
@@ -32,12 +33,15 @@ function App() {
 
   useEffect(() => {
     const searchAllRegex = searchValue && new RegExp(`${searchValue}`, "gi");
+    const genreRegex = filterByGenre && new RegExp(`${filterByGenre}`, "gi");
     const result = restaurants.filter(
       restaurant =>
-        (!searchAllRegex || searchAllRegex.test(restaurant.name) + searchAllRegex.test(restaurant.city) + searchAllRegex.test(restaurant.genre))
+        (!searchAllRegex || searchAllRegex.test(restaurant.name) + searchAllRegex.test(restaurant.city) + searchAllRegex.test(restaurant.genre)) &&
+        (!genreRegex || genreRegex.test(restaurant.genre)) &&
+        (!filterByState || restaurant.state === filterByState)
     );
     setFilteredRestaurants(result);
-  }, [searchValue, restaurants]);
+  }, [searchValue, restaurants, filterByGenre, filterByState]);
 
   const getGenres = (data) => {
     const genreList = []
@@ -60,7 +64,11 @@ function App() {
         searchValue={searchValue}
         setSearchValue={setSearchValue}
         genres={genres}
+        filterByGenre={filterByGenre}
+        setFilterByGenre={setFilterByGenre}
         states={states}
+        filterByState={filterByState}
+        setFilterByState={setFilterByState}
       />
       <Pagination
         data={filteredRestaurants}
