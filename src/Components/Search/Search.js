@@ -1,6 +1,12 @@
 import React from "react";
+import Filter from "./Filter";
 
-const Search = ({ setSearchValue, searchValue, }) => {
+const Search = ({
+    setSearchValue,
+    searchValue,
+    genres,
+    states
+}) => {
 
     const handleSearchInputChanges = e => {
         if (e.target.value === "") {
@@ -21,6 +27,10 @@ const Search = ({ setSearchValue, searchValue, }) => {
                 State="text"
                 value={searchValue}
                 onChange={handleSearchInputChanges}
+            />
+            <Filter
+                genres={genres}
+                states={states}
             />
             <button onClick={clearFilter}>clear</button>
         </form>

@@ -1,6 +1,10 @@
 import React from "react";
 
-const Filter = () => {
+const Filter = ({
+    genres,
+    states
+}) => {
+
     return (
         <div>
             <div>

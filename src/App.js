@@ -58,6 +58,8 @@ function App() {
       <Search
         searchValue={searchValue}
         setSearchValue={setSearchValue}
+        genres={genres}
+        states={states}
       />
       <Pagination
         data={filteredRestaurants}
