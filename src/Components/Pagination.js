@@ -30,7 +30,7 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
     return (
         <div>
             <Table
-                data={data}
+                data={currentDataIndex}
             />
             <ul>
                 {pageNumbers.map(number => {
