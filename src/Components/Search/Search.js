@@ -27,23 +27,28 @@ const Search = ({
     };
 
     return (
-        <form>
-            <input
-                placeholder="Search"
-                State="text"
-                value={searchValue}
-                onChange={handleSearchInputChanges}
-            />
-            <Filter
-                genres={genres}
-                filterGenre={filterGenre}
-                setFilterByGenre={setFilterByGenre}
-                states={states}
-                filterByState={filterByState}
-                setFilterByState={setFilterByState}
-            />
-            <button onClick={clearFilter}>clear</button>
-        </form>
+        <div className="search">
+            <h3>Search Bar</h3>
+            <form>
+                <label htmlFor="searchBar">General Search: </label>
+                <input
+                    placeholder="Search"
+                    State="text"
+                    value={searchValue}
+                    onChange={handleSearchInputChanges}
+                    name="searchBar"
+                />
+                <Filter
+                    genres={genres}
+                    filterGenre={filterGenre}
+                    setFilterByGenre={setFilterByGenre}
+                    states={states}
+                    filterByState={filterByState}
+                    setFilterByState={setFilterByState}
+                />
+                <button onClick={clearFilter}>Clear</button>
+            </form>
+        </div>
     );
 }
 

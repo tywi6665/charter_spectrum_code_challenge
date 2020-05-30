@@ -1,6 +1,45 @@
 .container {
     padding: 15px;
 
+    .search {
+        width: fit-content;
+        box-shadow: 0 2px 5px rgba(0,0,0,.25);
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        h3 {
+            margin: 5px 0;
+        }
+
+        label {
+            color: #aaa;
+            font-size: 12px;
+            width: 100%;
+            display: block;
+            font-weight: bold; 
+            margin-bottom: 2px;      
+        }
+
+        input, select {
+            
+            border: none;
+            padding: 10px 20px;
+            border: 1px solid #6c7ae0;
+            border-radius: 25px;
+            color: #000000;
+            display: block;
+        }
+
+        input {
+            height: 15px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+    }
+
     table {
         border: 1px #a39485 solid;
         border-bottom: 2px solid #6c7ae0;
