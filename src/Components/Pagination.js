@@ -20,9 +20,10 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
         setCurrentDataIndex(data.slice(firstDataIndex, lastDataIndex));
     }, [data, currentPage]);
 
-    const handleClick = (e) => {
-        // let element = e.target
-        // element.classList.add("active");
+    const handleClick = e => {
+        e.target.parentElement.querySelectorAll(".active").forEach(e =>
+            e.classList.remove("active"));
+        e.target.classList.add("active");
         setCurrentPage({
             ...currentPage,
             currentPage: Number(e.target.id)
@@ -38,6 +39,7 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
                 {pageNumbers.map(number => {
                     return (
                         <li
+                            className={number === 1 ? "active" : ""}
                             key={number}
                             id={number}
                             onClick={handleClick}
