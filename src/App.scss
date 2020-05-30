@@ -3,6 +3,7 @@
 
     table {
         border: 1px #a39485 solid;
+        border-bottom: 2px solid #6c7ae0;
         font-size: .9em;
         box-shadow: 0 2px 5px rgba(0,0,0,.25);
         width: 100%;
@@ -22,12 +23,28 @@
             }
         }
 
-        td {
-            padding: 1em .5em;
-            vertical-align: middle;
-            border-bottom: 1px solid rgba(0,0,0,.1);
-            background: #fff;
+        tbody {
+            
+            tr {
+                &:hover {
+                 
+                    td {
+                        background: #f4f4f4;
+                        color: #555;
+                    }
+                }
+            
+               td {
+                    color: #999;
+                    padding: 1em .5em;
+                    vertical-align: middle;
+                    border-bottom: 1px solid rgba(0,0,0,.1);
+                    background: #fff;
+                }
+            }
+         
         }
+        
     }
 
 }

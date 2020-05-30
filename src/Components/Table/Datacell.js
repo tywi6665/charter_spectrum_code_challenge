@@ -7,7 +7,7 @@ const Datacell = ({ data }) => {
             <td>{data.city}</td>
             <td>{data.state}</td>
             <td>{data.telephone}</td>
-            <td>{data.genre}</td>
+            <td>{data.genre.split(",").join(", ")}</td>
         </tr>
     );
 }

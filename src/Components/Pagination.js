@@ -12,7 +12,7 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
             arr.push(i);
         }
         setPageNumbers(arr)
-    }, [data]);
+    }, [data, currentPage]);
 
     useEffect(() => {
         const lastDataIndex = currentPage.currentPage * currentPage.resultsPerPage;
