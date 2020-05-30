@@ -21,6 +21,8 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
     }, [data, currentPage]);
 
     const handleClick = (e) => {
+        // let element = e.target
+        // element.classList.add("active");
         setCurrentPage({
             ...currentPage,
             currentPage: Number(e.target.id)
@@ -32,7 +34,7 @@ const Pagination = ({ data, currentPage, setCurrentPage }) => {
             <Table
                 data={currentDataIndex}
             />
-            <ul>
+            <ul className="pagination_ul">
                 {pageNumbers.map(number => {
                     return (
                         <li
