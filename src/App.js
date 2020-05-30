@@ -73,6 +73,12 @@ function App() {
           <h1>Welcome to the Restaurant Database!</h1>
           <p>Please take some time to explore the carefully curated restaurants that we have for you.</p>
         </div>
+        <div className="credits">
+          <h2>Made by tywi6665</h2>
+          <p>Check out some of my other
+            <br />
+              projects on <a href="https://github.com/tywi6665" target="_blank">Github</a></p>
+        </div>
       </div>
       {filteredRestaurants.length > 0 ? (
         <Pagination
