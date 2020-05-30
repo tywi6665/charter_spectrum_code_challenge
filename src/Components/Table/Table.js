@@ -26,7 +26,7 @@ const Table = ({ data }) => {
                     })
                 ) : (
                         <tr>
-                            <td>Loading Restaurants</td>
+                            <td className="message">Loading Restaurants</td>
                         </tr>
                     )}
             </tbody>

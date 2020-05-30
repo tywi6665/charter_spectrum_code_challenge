@@ -69,9 +69,9 @@ function App() {
           filterByState={filterByState}
           setFilterByState={setFilterByState}
         />
-        <div>
+        <div className="title">
           <h1>Welcome to the Restaurant Database!</h1>
-          <p>Please take some time to explore the carefully curated Restaurants that we have for you.</p>
+          <p>Please take some time to explore the carefully curated restaurants that we have for you.</p>
         </div>
       </div>
       {filteredRestaurants.length > 0 ? (
@@ -81,7 +81,7 @@ function App() {
           setCurrentPage={setCurrentPage}
         />
       ) : (
-          <p>Sorry, No Results :(</p>
+          <p className="message">Sorry, No Results :(</p>
         )}
     </Container>
   );
