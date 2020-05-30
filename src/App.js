@@ -58,16 +58,22 @@ function App() {
 
   return (
     <Container>
-      <Search
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        genres={genres}
-        filterByGenre={filterByGenre}
-        setFilterByGenre={setFilterByGenre}
-        states={states}
-        filterByState={filterByState}
-        setFilterByState={setFilterByState}
-      />
+      <div className="header">
+        <Search
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          genres={genres}
+          filterByGenre={filterByGenre}
+          setFilterByGenre={setFilterByGenre}
+          states={states}
+          filterByState={filterByState}
+          setFilterByState={setFilterByState}
+        />
+        <div>
+          <h1>Welcome to the Restaurant Database!</h1>
+          <p>Please take some time to explore the carefully curated Restaurants that we have for you.</p>
+        </div>
+      </div>
       {filteredRestaurants.length > 0 ? (
         <Pagination
           data={filteredRestaurants}
