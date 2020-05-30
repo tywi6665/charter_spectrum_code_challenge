@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/charter_spectrum_code_challenge/precache-manifest.b07f284faab43dd9c01052fcca29e0a7.js"
+  "/charter_spectrum_code_challenge/precache-manifest.f97409b0febf4788f24cd2e4e16f07e4.js"
 );
 
 self.addEventListener('message', (event) => {
